@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <!--共6行meta-->
+      <meta charset="UTF-8">
+      <!-- 移动网站5行meta -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="format-detection" content="email=no">
+      <meta name="apple-mobile-web-app-capable" content="yes" >
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>书城界面</title>
+    <link rel="stylesheet" href="外部css.css">
+    <script src="./iconfont.js"></script>
+    <style>
+        body{
+            background-color: #f2f2f2;
+        }
+        #box{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+           z-index: 99;
+            overflow: hidden;
+           align-items: center;
+         
+        }
+        #a1{
+            width: 360px;
+            height: 60px;
+            background-color: #f3f3f3;
+            position: fixed;
+            z-index: 6;
+        }
+        #ssk input{
+            
+            width: 100%;
+            border-radius: 6px;
+        }
+        #b1{
+            width: 360px;
+            height: 30px;
+        }
+        .c1{
+            width: 360px;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+        }
+        .c1 li{
+            width: 20%;
+            height: 33px;
+            text-align: center;
+            line-height: 33px;
+        }
+        #a2{
+            margin-top: 60px;
+            width: 320px;
+            height: 400px;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+        #b21{
+            width: 320px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+        }
+        #b21 p{
+            width: 160px;
+            height: 33px;
+            line-height: 33px;
+        }
+        #b21 p:nth-child(2){
+            text-align: right;
+            margin-right: 20px;
+            font-size: 12px;
+        }
+        #b22{
+            width: 320px;
+            height: 50px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        #c1{
+            font-size: 14px;
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+        }
+        #c1 li{
+            width: 70px;
+            height: 30px; 
+            line-height: 30px;
+            text-align: center;
+        }
+        #c1 li:nth-child(1){
+            background-color: #f3f3f3;
+            border-radius: 6px;
+        }
+        #c1 li:nth-child(2){
+            background-color: #f3f3f3;
+            border-radius: 6px;
+        }
+        #c1 li:nth-child(3){
+            background-color: #f3f3f3;
+            border-radius: 6px;
+        }
+        #c1 li:nth-child(4){
+            background-color: #f3f3f3;
+            border-radius: 6px;
+        }
+        #b23{
+            width: 320px;
+            height: 300px;
+            
+        }
+        #c2{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+            flex-wrap: wrap;
+            
+        }
+        #c2 li{
+            width: 160px;
+            height: 75px;
+            display: flex;
+            flex-direction: row;
+        }
+        #c2 img{
+            width: 40px;
+            height: 60px;
+            margin-left: 15px;
+        }
+        #c2 p{
+            width: 120px;
+            color: black;
+            font-size: 12px;
+            margin-top: 17px;
+        }
+        #a3{
+            margin-top: 30px;
+            width: 320px;
+            height: 130px;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+        #b3{
+            width: 320px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content:center;
+        }
+        #b3 p{
+            width: 160px;
+            height: 33px;
+            line-height: 33px;
+        }
+        #b3 p:nth-child(2){
+            text-align: right;
+            margin-right: 20px;
+        }
+        #c3 li{
+            width: 160px;
+            height: 25px;
+            display: flex;
+            flex-direction: row;
+        }
+        #d3{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+            flex-wrap: wrap;
+        }
+        #d3 img{
+            width: 25px;
+            height: 25px;
+            margin-top: 10px;
+           
+        }
+        #d3 p{
+            width: 120px;
+            color: black;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        .a4{
+            margin-top: 10px;
+            width: 320px;
+            overflow: hidden;
+        }
+
+        .a4 ul{
+            /* 宽度是其父元素的宽度的500% */
+            width: 320px;
+            /* 弹性布局：设置给父元素，这样其子元素能一行多个 */
+            display: flex;
+            /* animation:名称(关键帧名)，持续时间，动画播放次数 */
+            animation: myc 10s infinite;
+        }
+        .a4 li{
+            /* 每张图片宽度是视口宽度的20% */
+            width: 320px;
+            height: 100px;
+            /* 相对定位 */
+            position: relative;
+        }
+        .a4 img{
+            width: 320px;
+            height: 100px;
+            border-radius: 20px;
+        }
+        .a4 p{
+            position: absolute;
+            left: 90px;
+            bottom: 0;
+            background-color: rgba(0, 0, 35, .5);
+            font-size: 14px;
+            line-height: 24px;
+            color: #fff;
+            text-align: center;
+        }
+        @keyframes myc{
+            /* 10%*10s=1s,第1s，初始不变 */
+            0%{margin-left: 0;}
+            25%{margin-left: -320px;}
+            50%{margin-left: -640px;}
+            75%{margin-left: -960px;}
+            100%{margin-left: -1280px;}
+           
+        }
+        .icon {
+            /* em：默认大小是父元素的字体大小 */
+          width: 1em;
+          height: 1em;
+          /* 定义行内元素的基线相对于该元素所在行内的基线垂直对齐，负值会是元素降低，设置向下的偏移量 */
+          vertical-align: -0.15em;
+          /* currentColor是一个变量，父元素继承 */
+          /* fill: currentColor */
+          fill: currentColor;
+          overflow: hidden;
+        }
+        #bnav{
+            /* 固定定位：左下角 */
+            position: fixed;
+            left: 0px;
+            bottom: 120px;
+            /* 全屏宽 */
+            width: 100%;
+            background-color: #fbf9f9;
+            z-index: 9;
+        }
+        /* 防止下导航被遮挡 */
+        body{
+            margin-bottom: 70px;
+        }
+        #bnav ul{
+            background-color: white;
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+        }
+        #bnav li{
+            /* 每个li宽度：100%/下导航个数 */
+            width: 25%;
+            text-align: center;
+        }
+        #bnav svg{
+            /*字体大小控制大小  */
+            font-size: 25px;
+            margin: 5px auto;
+        }
+        #bnav p{
+            font-size: 15px;
+            line-height: 33px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        
+            <div id="a1">
+                <div id="ssk"> 
+                    <input type="text" list="data">
+                    <datalist id="data">
+                        <option value="热门小说"></option>
+                        <option value="热门排行"></option>
+                        <option value="热度最高"></option>
+                        <option value="热门评论"></option>
+                    </datalist>
+                </div>
+                <div id="b1">
+                    <ul class="c1">
+                        <li>关注</li>
+                        <li>推荐</li>
+                        <li>经典</li>
+                        <li>知识</li>
+                        <li>听书</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div id="a2">
+                <div id="b21">
+                    <p>排行榜</p>
+                    <p>换一批</p>
+                </div>
+                <div id="b22">
+                    <ul id="c1">
+                        <li>推荐榜</li>
+                        <li>完本榜</li>
+                        <li>口碑榜</li>
+                        <li>高分榜</li>
+                    </ul>
+                </div>
+                <div id="b23">
+                    <ul id="c2">
+                        <li>
+                            <a href="#">
+                                <img src="a1.jpg" alt="">
+                            </a>
+                                <p>游戏反馈，我也成仙</p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="a2.jpg" alt="">
+                            </a>
+                            <p>幸运属性点满，你拉我万界游戏</p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="a3.jpg" alt="">
+                            </a>
+                            <p>普攻永久增加生命！阁下如何应对</p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="a4.jpg" alt="">
+                                
+                            </a>
+                            <p>修仙者在魔法世界的摆烂生活</p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="a5.jpg" alt="">
+                                
+                            </a>
+                            <p>基因提取，养成禁忌生灵</p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="a6.jpg" alt="">
+                            </a>
+                            <p>都是玩家，凭什么你瞬间无敌</p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="a7.jpg" alt="">
+                            </a>
+                            <p>此刻，全球进入塔防时代</p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="a8.jpg" alt="">
+                            </a>
+                            <p>我一个概念神，一刀秒人很合理吧</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                <div id="a3">
+                    <div id="b3">
+                        <p>书荒广场</p>
+                        <p>更多</p>
+                    </div>
+                    <div id="c3">
+                        <ul id="d3">
+                            <li>
+                                <a href="#">
+                                    <img src="b1.jpg" alt="">   
+                                </a>
+                                <p>书荒啦！有没有新书...</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="b1.jpg" alt="">
+                                </a>
+                                <p>不知道看什么，来...</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="b1.jpg" alt="">  
+                                </a>
+                                <p>有没那种看着很不错...</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="b1.jpg" alt="">  
+                                </a>
+                                <p>求推荐求推荐，想...</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="b1.jpg" alt="">  
+                                </a>
+                                <p>在下给你们整点不一...</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="b1.jpg" alt="">
+                                </a>
+                                <p>点这里，各种类型的...</p>
+                            </li>
+                        </ul>             
+                    </div>
+                </div>
+                <div class="a4">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="c1.jpg" alt="">
+                            </a>
+                            <p>我们在同一片蓝天下。</p>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="c2.jpg" alt="">
+                            </a>
+                            <p>想一起去环游世界嘛？</p>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="c3.jpg" alt="">
+                            </a>
+                            <p>粉色是浪漫的代名词！</p>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="c4.jpg" alt="">
+                            </a>
+                            <p>看！太阳神起来了</p>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="c5.jpg" alt="">
+                            </a>
+                            <p>这里是我心中最后的净土.</p>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="书城.html">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhinanzhen"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>书城</p>
+                </a>
+            </li>
+            <li>
+                <a href="分类.html">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-fenlei"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-qianbi"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>福利</p>
+                </a>
+            </li>
+            <li>
+                <a href="../book/book.html">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xuexi-"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>书架</p>
+                </a>
+            </li>
+            <li>
+                <a href="../me/me.html">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-wode"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        var bnav=document.getElementById("bnav");
+        bnav.onscroll=function(){
+            //获取scrollTop
+            var st = document.documentElement.scrollTop;
+            console.log(st);
+            //scrollTop滚过某一个数值后
+            if(st > head.offsetHeight){
+                //ad由隐藏变成显示
+                ad.style.dispaly="block";
+                //fixed固定定位
+                fixed.style.position="fixed";
+            }else{
+                //没滚过。隐藏
+                ad.style.dispaly="none";
+                //没滚过，默认定位
+                fixed.style.position="static";
+            }
+        }
+    </script>
+
+</body>
+</html>

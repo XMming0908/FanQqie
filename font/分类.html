@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <!--共6行meta-->
+      <meta charset="UTF-8">
+      <!-- 移动网站5行meta -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="format-detection" content="email=no">
+      <meta name="apple-mobile-web-app-capable" content="yes" >
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <link rel="stylesheet" href="外部css.css">
+    <title>分类界面</title>
+    <!-- 第一步：iconfont.js -->
+    <script src="./iconfont.js"></script>
+    <style>
+        .icon {
+            /* em：默认大小是父元素的字体大小 */
+          width: 1em;
+          height: 1em;
+          /* 定义行内元素的基线相对于该元素所在行内的基线垂直对齐，负值会是元素降低，设置向下的偏移量 */
+          vertical-align: -0.15em;
+          /* currentColor是一个变量，父元素继承 */
+          /* fill: currentColor */
+          fill: currentColor;
+          overflow: hidden;
+          
+        }
+        #bnav{
+            /* 固定定位：左下角 */
+            position: fixed;
+            left: 0px;
+            bottom: 120px;
+            /* 全屏宽 */
+            width: 100%;
+            background-color: #dedbdb;
+            z-index: 9;
+        }
+
+
+        /* 防止下导航被遮挡 */
+        body{
+            margin-bottom: 100px;
+        }
+        #bnav ul{
+            background-color: white;
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+        }
+        #bnav li{
+            /* 每个li宽度：100%/下导航个数 */
+            width: 25%;
+            text-align: center;
+        }
+        #bnav svg{
+            /*字体大小控制大小  */
+            font-size: 25px;
+            margin: 5px auto;
+        }
+        #bnav p{
+            font-size: 15px;
+            line-height: 33px;
+        }
+        #box{
+            
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin: 50px 0 70px 80px;
+        }
+        #a1{
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            top: 0px;
+            left: 0;   
+            background-color: #f3f3f3;
+            overflow: hidden; 
+            position: fixed;    
+            z-index: 1;    
+            
+        }
+        #b1 li{
+            float: left;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            
+        }
+        #b1 li:nth-child(1){
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #a2{
+            width: 80px;
+            height: 760px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: #f3f3f3;
+            position: fixed;  
+        }
+        #b2 li{
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 14px;
+        }
+        #li1{
+            color: red;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 14px;
+        }
+        #aa{
+            width: 40px;
+            height: 20px;
+           
+            font-size: 12px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        #b3 li{
+            float: left;
+            width: 28%;
+            background-color: rgb(242, 242, 242);
+            border-radius: 10px;
+            line-height: 30px;
+            margin:10px 0 5px 10px ;
+            height: 35px;
+            text-align: center;
+            font-size: 14px;
+        }
+        #bb{
+            width: 50px;
+            height: 20px;
+            font-size: 12px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        #a4 li{
+            float: left;
+            width: 28%;
+            background-color: rgb(242, 242, 242);
+            border-radius: 10px;
+            line-height: 30px;
+            margin:10px 0 5px 10px ;
+            height: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+        #cc{
+            width: 50px;
+            height: 20px;
+            font-size: 12px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        #a5 li{
+            float: left;
+            width: 28%;
+            background-color: rgb(242, 242, 242);
+            border-radius: 10px;
+            line-height: 30px;
+            margin:10px 0 5px 10px ;
+            height: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+        #dd{
+            width: 50px;
+            height: 20px;
+            font-size: 12px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        #a6 li{
+            float: left;
+            width: 28%;
+            background-color: rgb(242, 242, 242);
+            border-radius: 10px;
+            line-height: 30px;
+            margin:10px 0 5px 10px ;
+            height: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+        #ee{
+            width: 50px;
+            height: 20px;
+            font-size: 12px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        #a7 li{
+            float: left;
+            height: 30px;
+            text-align: center;
+            font-size: 14px;
+            width: 28%;
+            background-color: rgb(242, 242, 242);
+            border-radius: 10px;
+            line-height: 30px;
+            margin:10px 0 5px 10px ;
+        }
+    </style>
+</head>
+<body>
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="书城.html">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhinanzhen"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>书城</p>
+                </a>
+            </li>
+            <li>
+                <a href="分类.html">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-fenlei"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-qianbi"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>福利</p>
+                </a>
+            </li>
+            <li>
+                <a href="../book/book.html">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xuexi-"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>书架</p>
+                </a>
+            </li>
+            <li>
+                <a href="../me/me.html">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-wode"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div id="box" style="margin-bottom: 70px;">
+        <div id="a1">
+            <ul id="b1">
+                <li>男生</li>
+                <li>女生</li>
+                <li>听书</li>
+                <li>出版</li>
+                <li>漫画</li>
+            </ul>
+        </div>
+        <div id="a2">
+            <ul id="b2">
+                <li id="li1" onclick="fenlei()">分类</li>
+                <li id="li2" onclick="rmbq()">热门标签</li>
+                <li id="li3" onclick="zhuti()">主题</li>
+                <li id="li4" onclick="juese()">角色</li>
+                <li id="li5" onclick="qingjie()">情节</li>
+            </ul>
+        </div>
+        <div id="aa">
+            <p>分类</p>
+        </div>
+        <div id="a3">
+            <ul id="b3">
+                <li>都市</li>
+                <li>玄幻</li>
+                <li>历史</li>
+                <li>奇幻仙侠</li>
+                <li>种田</li>
+                <li>游戏体育</li>
+                <li>同人</li>
+                <li>科幻</li>
+            </ul>
+        </div>
+        <div id="bb">
+            <p>热门标签</p>
+        </div>
+        <div id="a4">
+            <ul>
+                <li>系统</li>
+                <li>末世</li>
+                <li>玄幻</li>
+                <li>重生</li>
+                <li>校花</li>
+                <li>穿越</li>
+                <li>网游</li>
+                <li>单女主</li>
+                <li>无敌</li>
+                <li>都市修真</li>
+                <li>灵异</li>
+                <li>搞笑轻松</li>
+                <li>奇幻仙侠</li>
+                <li>末日求生</li>
+                <li>修仙</li>
+                <li>娱乐圈</li>
+                <li>反派</li>
+                <li>历史古代</li>
+                <li>神豪</li>
+                <li>特种兵</li>
+                <li>都市异能</li>
+                <li>无脑爽</li>
+                <li>东方玄幻</li>
+                <li>电竞</li>
+                <li>女帝</li>
+                <li>规则怪谈</li>
+                <li>剑道</li>
+                <li>宠物</li>
+                <li>大唐</li>
+                <li>衍生同人</li>
+                <li>扮猪吃虎</li>
+                <li>皇帝</li>
+                <li>都市青春</li>
+                <li>盗墓</li>
+                <li>种田</li>
+                <li>海岛</li>
+                <li>历史</li>
+                <li>神医</li>
+                <li>都市日常</li>
+                <li>灵气复苏</li>
+                <li>双系统</li>
+                <li>大小姐</li>
+                <li>年代</li>
+                <li>异世大陆</li>
+                <li>双重生</li>
+                <li>直播</li>
+                <li>迪化</li>
+                <li>都市种田</li>
+                <li>大秦</li>
+                <li>同人</li>
+                <li>求生</li>
+                <li>传统玄幻</li>
+                <li>山海经</li>
+                <li>卡牌</li>
+                <li>轻小说</li>
+                <li>无后宫</li>
+                <li>国运</li>
+                <li>奶爸</li>
+                <li>无女主</li>
+                <li>大佬</li>
+                <li>高武世界</li>
+                <li>抗战谍战</li>
+                <li>穿书</li>
+                <li>架空</li>
+                <li>赘婿</li>
+                <li>克鲁苏</li>
+                <li>捉鬼</li>
+                <li>第四天灾</li>
+                <li>黑化</li>
+                <li>游戏主播</li>
+                <li>惊悚游戏</li>
+                <li>都市生活</li>
+                <li>奥特同人</li>
+                <li>诸天万界</li>
+                <li>学霸</li>
+                <li>战神</li>
+                <li>武侠</li>
+                <li>赛博朋克</li>
+                <li>破案</li>
+                <li>洪荒</li>
+                <li>无限流</li>
+                <li>都市脑洞</li>
+                <li>官场</li>
+                <li>高手下山</li>
+                <li>体育</li>
+                <li>黑科技</li>
+                <li>剑修</li>
+                <li>鉴宝</li>
+                <li>悬疑</li>
+                <li>科幻</li>
+                <li>天才</li>
+                <li>聊天群</li>
+                <li>火影</li>
+                <li>文学小说</li>
+                <li>美食</li>
+                <li>宝可梦</li>
+                <li>宫廷侯爵</li>
+                <li>升级流</li>
+                <li>星际</li>
+                <li>悬疑脑洞</li>
+                <li>影视小说</li>
+                <li>职场</li>
+                <li>神奇宝贝</li>
+                <li>囤物资</li>
+                <li>推理</li>
+                <li>乡村</li>
+                <li>海贼王</li>
+                <li>体育游戏</li>
+                <li>开局</li>
+                <li>玄幻脑洞</li>
+                <li>明朝</li>
+                <li>武将</li>
+                <li>钓鱼</li>
+                <li>天灾</li>
+                <li>综漫</li>
+                <li>争霸</li>
+                <li>九叔</li>
+                <li>腹黑</li>
+                <li>斩神</li>
+                <li>惊悚</li>
+                <li>家庭</li>
+                <li>海贼</li>
+                <li>全能</li>
+                <li>封神</li>
+                <li>打脸</li>
+                <li>特工</li>
+                <li>空间</li>
+                <li>战争</li>
+                <li>二次元</li>
+                <li>废土</li>
+                <li>副本</li>
+                <li>漫威</li>
+                <li>灵魂互换</li>
+                <li>外卖</li>
+                <li>四合院</li>
+                <li>发家致富</li>
+                <li>龙珠</li>
+                <li>1v1</li>
+                <li>魂穿</li>
+                <li>文化历史</li>
+                <li>谍战</li>
+                <li>断层</li>
+                <li>宋朝</li>
+                <li>第一人称</li>
+                <li>群像</li>
+                <li>清朝</li>
+                <li>神探</li>
+                <li>科举</li>
+                <li>生活</li>
+            </ul>
+        </div>
+        <div id="cc">
+            <p>主题</p>
+        </div>
+        <div id="a5">
+            <ul id="b5">
+                <li>都市</li>
+                <li>玄幻</li>
+                <li>悬疑灵异</li>
+                <li>搞笑轻松</li>
+                <li>末日求生</li>
+                <li>东方玄幻</li>
+                <li>奇幻仙侠</li>
+                <li>都市日常</li>
+                <li>都市异能</li>
+                <li>历史</li>
+                <li>历史古代</li>
+                <li>规则怪谈</li>
+                <li>都市生活</li>
+                <li>异世大陆</li>
+                <li>都市脑洞</li>
+                <li>灵气复苏</li>
+                <li>克鲁苏</li>
+                <li>都市种田</li>
+                <li>轻小说</li>
+                <li>第四天灾</li>
+                <li>架空</li>
+                <li>抗战谍战</li>
+                <li>高武世界</li>
+                <li>武侠</li>
+                <li>国运</li>
+                <li>体育</li>
+                <li>赛博朋克</li>
+                <li>科幻</li>
+                <li>悬疑</li>
+                <li>悬疑脑洞</li>
+                <li>影视小说</li>
+                <li>玄幻脑洞</li>
+                <li>综漫</li>
+                <li>历史脑洞</li>
+                <li>宝可梦</li>
+                <li>武将</li>
+                <li>开局</li>
+                <li>天灾</li>
+                <li>谍战</li>
+                <li>断层</li>
+                <li>第一人称</li>
+                <li>宋朝</li>
+                <li>清朝</li>
+            </ul>
+        </div>
+        <div id="dd">
+            <p>角色</p>
+        </div>
+        <div id="a6">
+            <ul id="b6">
+                <li>校花</li>
+                <li>但女主</li>
+                <li>特种兵</li>
+                <li>反派</li>
+                <li>扮猪吃虎</li>
+                <li>神医</li>
+                <li>女帝</li>
+                <li>皇帝</li>
+                <li>大小姐</li>
+                <li>游戏主播</li>
+                <li>战神</li>
+                <li>赘婿</li>
+                <li>奶爸</li>
+                <li>学霸</li>
+                <li>大佬</li>
+                <li>宫廷侯爵</li>
+                <li>无女主</li>
+                <li>天才</li>
+                <li>全能</li>
+                <li>特工</li>
+                <li>腹黑</li>
+                <li>群像</li>
+                <li>神探</li>
+            </ul>
+        </div>
+        <div id="ee">
+            <p>情节</p>
+        </div>
+        <div id="a7">
+            <ul id="b7">
+                <li>系统</li>
+                <li>末世</li>
+                <li>重生</li>
+                <li>网游</li>
+                <li>穿越</li>
+                <li>游戏体育</li>
+                <li>同人</li>
+                <li>科幻</li>
+                <li>历史</li>
+                <li>历史古代</li>
+                <li>规则怪谈</li>
+                <li>都市生活</li>
+                <li>异世大陆</li>
+                <li>都市脑洞</li>
+                <li>灵气复苏</li>
+                <li>克鲁苏</li>
+                <li>都市种田</li>
+                <li>轻小说</li>
+                <li>第四天灾</li>
+                <li>架空</li>
+                <li>抗战谍战</li>
+                <li>高武世界</li>
+                <li>武侠</li>
+                <li>国运</li>
+                <li>体育</li>
+                <li>赛博朋克</li>
+                <li>科幻</li>
+                <li>悬疑</li>
+                <li>悬疑脑洞</li>
+                <li>影视小说</li>
+                <li>玄幻脑洞</li>
+                <li>综漫</li>
+                <li>历史脑洞</li>
+                <li>宝可梦</li>
+                <li>武将</li>
+                <li>开局</li>
+                <li>天灾</li>
+                <li>谍战</li>
+                <li>断层</li>
+                <li>第一人称</li>
+                <li>宋朝</li>
+                <li>清朝</li>
+                <li>明朝</li>
+                <li>武将</li>
+                <li>钓鱼</li>
+                <li>天灾</li>
+                <li>综漫</li>
+                <li>争霸</li>
+                <li>九叔</li>
+                <li>腹黑</li>
+                <li>斩神</li>
+                <li>惊悚</li>
+                <li>家庭</li>
+                <li>海贼</li>
+                <li>全能</li>
+                <li>封神</li>
+                <li>打脸</li>
+                <li>特工</li>
+                <li>空间</li>
+                <li>战争</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+            var li1=document.getElementById("li1");
+            var li2=document.getElementById("li2");
+            var li3=document.getElementById("li3");
+            var li4=document.getElementById("li4");
+            var li5=document.getElementById("li5");
+
+            var aa=document.getElementById("aa");
+            var bb=document.getElementById("bb");
+            var cc=document.getElementById("cc");
+            var dd=document.getElementById("dd");
+            var ee=document.getElementById("ee");
+
+            var li1 = document.getElementById("li1");
+            var li2 = document.getElementById("li2");
+            var li3 = document.getElementById("li3");
+            var li4 = document.getElementById("li4");
+
+            function fenlei(){
+                li1.style.color="red";
+                if(li1.style.color="red"){
+                    li2.style.color="black";
+                    li3.style.color="black";
+                    li4.style.color="black";
+                    li5.style.color="black";
+                }
+            }
+
+            function rmbq(){
+                li2.style.color="red";
+                if(li2.style.color="red"){
+                    
+                    li1.style.color="black";
+                    li3.style.color="black";
+                    li4.style.color="black";
+                    li5.style.color="black";
+                }
+            }
+
+            function zhuti(){
+                li3.style.color="red";
+                if(li3.style.color="red"){
+                    li1.style.color="black";
+                    li2.style.color="black";
+                    li4.style.color="black";
+                    li5.style.color="black";
+                }
+            }
+
+            function juese(){
+                li4.style.color="red";
+                if(li4.style.color="red"){
+                    li1.style.color="black";
+                    li2.style.color="black";
+                    li3.style.color="black";
+                    li5.style.color="black";
+                }
+            }
+
+            function qingjie(){
+                li5.style.color="red";
+                if(li5.style.color="red"){
+                    li1.style.color="black";
+                    li2.style.color="black";
+                    li3.style.color="black";
+                    li4.style.color="black";
+                }
+            }
+
+            li1.addEventListener("click",function(){
+                  var s=aa.offsetTop-aa.offsetTop;
+                  document.body.scrollTop = document.documentElement.scrollTop =s;
+            })
+
+            li2.addEventListener("click",function(){
+                  var s=bb.offsetTop-aa.offsetTop;
+                  document.body.scrollTop = document.documentElement.scrollTop =s;
+            })
+
+            li3.addEventListener("click",function(){
+                  var s=cc.offsetTop-aa.offsetTop
+                  document.body.scrollTop = document.documentElement.scrollTop =s;
+            })
+
+            li4.addEventListener("click",function(){
+                  var s=dd.offsetTop-aa.offsetTop;
+                  document.body.scrollTop = document.documentElement.scrollTop =s;
+            })
+
+            li5.addEventListener("click",function(){
+                  var s=ee.offsetTop-aa.offsetTop; 
+                  document.body.scrollTop = document.documentElement.scrollTop =s;
+            })
+          
+
+
+
+    </script>
+</body>
+</html>

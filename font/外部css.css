@@ -1,0 +1,24 @@
+/* 比较完整的全局CSS文件（外部CSS） */
+body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,dt,p,form{
+    padding: 0;
+    margin: 0;
+}
+body{
+    min-width: 320px;
+    /* 移动端x轴水平方向溢出隐藏 */
+    overflow-x: hidden;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 伪类选择器：a:visitde访问过的超链接 */
+a:visitde{
+    color: #666;
+}
+img{
+    display: block;
+    border: none;
+}

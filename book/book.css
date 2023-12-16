@@ -1,0 +1,275 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+  
+}
+
+#top{
+    width: 100%;
+    display: flex;
+    height: 1rem;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 999;
+}
+
+.top_div{
+    width: 50%;
+    display: flex;
+}
+
+.top_div span{
+    font-size: .4rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: .5rem;
+}
+
+.top_div a{
+    font-size: .3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    color: rgb(151, 149, 149);
+    display: flex;
+    margin-left: .5rem;
+}
+
+.top_div:nth-child(2){
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.top_div:nth-child(2) img{
+   width: .4rem;
+   height: .4rem;
+   margin-right: .4rem;
+  
+}
+
+#box{
+
+    display: flex;
+    flex-direction: column;
+    padding: .1rem .4rem 80px .4rem;
+    margin-top: 1rem;
+    position: relative;
+   
+}
+
+.box_div{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: .3rem;
+}
+
+#box_div{
+   
+    z-index: 9999;
+    background-color: white;
+}
+
+.radius{
+    height: .4rem;
+    background-color: rgb(245, 245, 245);
+    border-radius: .1rem;
+    display: flex;
+    padding: .1rem .2rem .1rem .2rem;
+    align-items: center;
+    margin-right: .2rem
+}
+
+.radius span{
+    font-size: .25rem;
+    font-weight: bold;
+}
+
+.radius img{
+    width: .3rem;
+    height: .3rem;
+}
+
+
+.box_a{
+    margin-left: auto;
+    font-size: .3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#myul{
+    width: 80%;
+    display: flex;
+    list-style: none;
+    overflow-y:auto;
+}
+
+.myul_li{
+    display: flex;
+    margin-right: .2rem;
+    background-color: rgb(245, 245, 245);
+    border-radius: .1rem;
+    font-size: .3rem;
+    font-weight: bold;
+    width: calc((100% - .6rem)/4);
+    padding: .1rem 0 .1rem 0;
+    align-items: center;
+    justify-content: center;
+    &:nth-child(4n){
+        margin-right: 0px;
+    }
+}
+
+
+.myul_li_hove{
+    display: flex;
+    margin-right: .2rem;
+    background-color: #fdeee7;
+    border-radius: .1rem;
+    font-size: .3rem;
+    color: #fa6a35;
+    font-weight: bold;
+    width: calc((100% - .6rem)/4);
+    padding: .1rem 0 .1rem 0;
+    align-items: center;
+    justify-content: center;
+    &:nth-child(4n){
+        margin-right: 0px;
+    }
+}
+
+
+
+#book_list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.list_li{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 .3rem .5rem 0;
+    min-width: calc((100% - .68rem) / 3);
+    max-width: calc((100% - .68rem) / 3);
+    align-items: center;
+    position: relative;
+    &:nth-child(3n){
+        margin-right: 0;
+    }
+}
+
+.book_img{
+    width: 100%;
+    height: 2.6rem;
+    border-radius: .2rem;
+    z-index: 99;
+}
+
+.list_li i{
+    width: .2rem;
+    height:3rem ;
+    background: url(../img/book_back.png)no-repeat;
+    position: absolute;
+    right:-.11rem ;
+    top: .05rem;
+    background-size: contain;
+}
+
+.list_li span{
+    font-size: .3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    font-weight: bold;
+    margin: .1rem 0 .1rem .1rem;
+}
+
+.list_li a{
+    width: 100%;
+    font-size: .25rem;
+    color: rgb(184, 184, 184);
+    margin: 0 0 .1rem .1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.li_img{
+    width: .5rem;
+    height: .5rem;
+    margin-left: auto;
+}
+
+.fixed{
+    width: calc(100% - .8rem);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: .3rem .0 .2rem 0;
+    position: fixed;
+    top: 1rem;
+}
+
+
+
+#bnav{
+    /* 固定定位：左下角 */
+    position: fixed;
+    left: 0px;
+    bottom: 0;
+    /* 全屏宽 */
+    width: 100%;
+    background-color: #fbf9f9;
+    z-index: 9999;
+    height: 80px;
+}
+
+#bnav ul{
+    background-color: white;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+}
+#bnav li{
+    /* 每个li宽度：100%/下导航个数 */
+    width: 25%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+#bnav svg{
+    /*字体大小控制大小  */
+    width: .3rem;
+    height: .3rem;
+    font-size: 25px;
+    margin: 5px auto;
+}
+#bnav a{
+    font-size: .3rem;
+    line-height: 33px;
+}
+
+li{
+    list-style: none;
+}

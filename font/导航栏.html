@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--共6行meta-->
+    <meta charset="UTF-8">
+    <!-- 移动网站5行meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" >
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>基于svg的自适应宽度导航</title>
+    <!-- 外部css -->
+    <link rel="stylesheet" href="外部css.css">
+    <!-- 第一步：iconfont.js -->
+    <script src="./iconfont.js"></script>
+    <!-- 第二步：css -->
+    <style>
+        .icon {
+            /* em：默认大小是父元素的字体大小 */
+          width: 1em;
+          height: 1em;
+          /* 定义行内元素的基线相对于该元素所在行内的基线垂直对齐，负值会是元素降低，设置向下的偏移量 */
+          vertical-align: -0.15em;
+          /* currentColor是一个变量，父元素继承 */
+          /* fill: currentColor */
+          fill: currentColor;
+          overflow: hidden;
+        }
+        #bnav{
+            /* 固定定位：左下角 */
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            /* 全屏宽 */
+            width: 100%;
+            background-color: #dedbdb;
+            z-index: 9;
+        }
+        /* 防止下导航被遮挡 */
+        body{
+            margin-bottom: 100px;
+        }
+        #bnav ul{
+            display: flex;
+        }
+        #bnav li{
+            /* 每个li宽度：100%/下导航个数 */
+            width: 25%;
+            text-align: center;
+        }
+        #bnav svg{
+            /*字体大小控制大小  */
+            font-size: 25px;
+            margin: 5px auto;
+        }
+        #bnav p{
+            font-size: 15px;
+            line-height: 33px;
+        }
+    </style>
+        
+</head>
+<body>
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="#">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhinanzhen"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>书城</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-fenlei"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-qianbi"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>福利</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xuexi-"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>书架</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!-- 图标 -->
+                    <span>
+                        <!-- 第三步 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-wode"></use>
+                        </svg>
+                    </span>
+                    <!-- 下文 -->
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
